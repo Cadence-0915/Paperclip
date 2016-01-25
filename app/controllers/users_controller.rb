@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   end
 
   def show
-  	@user = User.find(params[:fname])
+  	@user = User.find(params[:id])
   end
 
   def new
@@ -12,10 +12,10 @@ class UsersController < ApplicationController
   end
 
   def create
-  	@user = User.new(user_params)
+  	@user = User.create(user_params)
   	if @user.save 
       flash[:notice] = "Thank you for creating a new account."
-  		redirect_to root_path
+  		redirect_to @user
   	else
   		flash[:alert] = "We're sorry. A new account could not be created. Please try again later."
   		redirect_to new_user_path
@@ -25,6 +25,6 @@ class UsersController < ApplicationController
   private
   
   def user_params
-  		params.require(:user).permit(:fname, :lname, :username, :email, :password)
+  		params.require(:user).permit(:fname, :lname, :username, :email, :password, :avatar)
   end
 end
