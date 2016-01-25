@@ -1,0 +1,21 @@
+body{
+	background-image: url("paperclip.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+h1, p{
+	margin: 45px;
+}
+
+#new{
+	border-radius: 7px;
+	margin: -1px;
+	margin-left: 45px;
+	font-size: 14px;
+}
+
+#new a{
+	text-decoration: none;
+	margin: 40px;
+}
